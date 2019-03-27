@@ -44,7 +44,7 @@
           $connection = new PDO($dsn, $username, $password, $options);
    	
           // SECOND: Create the SQL 
-          $sql = "SELECT * FROM crudtable";
+          $sql = "SELECT * FROM crudtable order by purchasedate desc;";
           
           // THIRD: Prepare the SQL
           $statement = $connection->prepare($sql);
