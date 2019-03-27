@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+
+p {
+   font-style: italic;
+  } 
+
+body {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* Navigation */
+ nav {
+     margin-top: 1px;
+     border-top: 1px solid #909090;
+     
+     text-align: center;
+}
+
+/* Remove Skeleton ul style */ 
+ul {
+    display: inline-block;
+}
+
+/* Remove Skeleton list styles */
+li {
+    list-style: none;
+    margin: 1em;
+    float: left;
+    display: ínline;
+}
+
+.button {
+    padding: 0;
+}
+
+
+/* User agent style sheet text decorations remove */
+a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #8eb0ff;
+    padding: 10px 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Skeleton Dosen't have date as an input type */
+/* Adding custom width */
+input[type="date"], input[type="text"], input[type="number"] {
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 20em;
+}
+
+select {
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 20em;
+}
+
+/* Delete button */
+.delete {
+    color: red;
+}
+
+.delete:hover {
+    color: firebrick;
+}
+
+/* Update button */
+
+.updated {
+    color: skyblue;
+}
+
+.updated:hover {
+    color: red;
+}
+
+/* Non responsive view all button */
+.push {
+    margin: 1em !important;
+    margin-left: 23em !important;
+}
+
+/* Center the header */
+.center {
+    margin-left: 5em; 
+}
+
+/* Center the header for read */
+.center2 {
+    margin-left: 7em; 
+}
+
+/* Center the header for update */
+.center3 {
+    margin-left: 9em; 
+}
+
+/* Center the header for delete */
+.center4 {
+    margin-left: 8.5em; 
+}
+
+/* Create button style, override Skeleton */
+.green {
+    color: green !important;
+    border-color: green !important;
+}
