@@ -9,7 +9,7 @@
    // Connect to the database
    include "config.php";
    $db = mysqli_connect($host, $username, $password, $db_registration);
-   //var_dump($db);
+   // Var_dump($db);
    
    // REGISTER USER
    if (isset($_POST['reg_user'])) {
