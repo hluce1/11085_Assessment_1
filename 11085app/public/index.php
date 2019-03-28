@@ -22,7 +22,7 @@
          <h2>Home Page</h2>
       </div>
       <div class="content">
-         <!-- notification message -->
+         <!-- Notification message -->
          <?php if (isset($_SESSION['success'])) : ?>
          <div class="error success">
             <h3 class="center">
@@ -33,7 +33,7 @@
             </h3>
          </div>
          <?php endif ?>
-         <!-- logged in user information -->
+         <!-- Logged in user information -->
          <?php if (isset($_SESSION['username'])) : ?>
          <p class="center">Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
          <div class="webkit"><a class="logout" href="index.php?logout='1'" style="color: red;">logout</a></div>
