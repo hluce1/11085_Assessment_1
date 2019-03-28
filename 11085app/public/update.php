@@ -6,10 +6,10 @@
    	header('location: login.php');
    }
    
-     // include the config file that we created before
+     // Include the config file that we created before
      require "../config.php"; 
      
-     // this is called a try/catch statement 
+     // This is called a try/catch statement 
    try {
          // FIRST: Connect to the database
          $connection = new PDO($dsn, $username, $password, $options);
@@ -25,7 +25,7 @@
          $result = $statement->fetchAll();
    }
    catch(PDOException $error) {
-         // if there is an error, tell us what it is
+         // If there is an error, tell us what it is
    echo $sql . "<br>" . $error->getMessage();
    }
    
@@ -51,7 +51,7 @@
          <td> <?php echo $row['category']; ?> </td>
          <td><a class="update" href='update-work.php?id=<?php echo $row['id']; ?>'>Update</a></td>
       </tr>
-      <?php }; //close the foreach ?>
+      <?php }; // Close the foreach ?>
    </tbody>
 </table>
 <?php include "../public/templates/footer.php"; ?>
