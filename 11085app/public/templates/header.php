@@ -15,7 +15,6 @@
       </h1>
       <nav id="nav" class="twelve columns">
          <ul>
-            <!-- This is the index page button - delete or make it more useful -->
             <li class="button"><a href="index.php">Home</a></li>
             <li class="button"><a href="create.php">New Item</a></li>
             <li class="button"><a href="update.php">All Expenses</a></li>
