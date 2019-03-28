@@ -6,7 +6,7 @@
     	header('location: login.php');
     }
    
-      // include the config file 
+      // Include the config file 
       require "../config.php";
       require "common.php";
    
@@ -14,10 +14,10 @@
       if (isset($_GET["id"])) {
        // this is called a try/catch statement 
           try {
-              // define database connection
+              // Define database connection
               $connection = new PDO($dsn, $username, $password, $options);
               
-              // set id variable
+              // Set id variable
               $id = $_GET["id"];
               
               // Create the SQL 
@@ -26,15 +26,15 @@
               // Prepare the SQL
               $statement = $connection->prepare($sql);
               
-              // bind the id to the PDO
+              // Bind the id to the PDO
               $statement->bindValue(':id', $id);
               
-              // execute the statement
+              // Execute the statement
               $statement->execute();
    
    
           } catch(PDOException $error) {
-              // if there is an error, tell us what it is
+              // If there is an error, tell us what it is
               echo $sql . "<br>" . $error->getMessage();
           }
       };
@@ -78,7 +78,7 @@
          <td> <?php echo $row['category']; ?> </td>
          <td><a class="delete" href='delete.php?id=<?php echo $row['id']; ?>'>Delete</a></td>
       </tr>
-      <?php }; //close the foreach ?>
+      <?php }; // Close the foreach ?>
    </tbody>
 </table>
 <?php include "templates/footer.php"; ?>
