@@ -6,15 +6,15 @@
    	header('location: login.php');
    }
    
-     // include the config file that we created last week
+     // Include the config file 
      require "../config.php";
      require "common.php";
-       // run when submit button is clicked
+       // Run when submit button is clicked
      if (isset($_POST['submit'])) {
          try {
              $connection = new PDO($dsn, $username, $password, $options);  
              
-             //grab elements from form and set as varaible
+             // Grab elements from form and set as varaible
              $work =[
                "id"         => $_POST['id'],
                "item" => $_POST['item'],
@@ -24,7 +24,7 @@
                "date"   => $_POST['date'],
              ];
              
-             // create SQL statement
+             // Create SQL statement
              $sql = "UPDATE `crudtable` 
                      SET id = :id, 
                          item = :item, 
@@ -33,49 +33,49 @@
                          category = :category, 
                          date = :date 
                      WHERE id = :id";
-             //prepare sql statement
+             // Prepare sql statement
              $statement = $connection->prepare($sql);
              
-             //execute sql statement
+             // Execute sql statement
              $statement->execute($work);
          } catch(PDOException $error) {
              echo $sql . "<br>" . $error->getMessage();
          }
      }
-     // GET data from DB
-     //simple if/else statement to check if the id is available
+     // GET data from the DB
+     // Simple if/else statement to check if the id is available
      if (isset($_GET['id'])) {
          //yes the id exists 
          
          try {
-             // standard db connection
+             // Standard db connection
              $connection = new PDO($dsn, $username, $password, $options);
              
-             // set if as variable
+             // Set if as variable
              $id = $_GET['id'];
              
-             //select statement to get the right data
+             // Select statement to get the right data
              $sql = "SELECT * FROM crudtable WHERE id = :id";
              
-             // prepare the connection
+             // Prepare the connection
              $statement = $connection->prepare($sql);
              
-             //bind the id to the PDO id
+             // Bind the id to the PDO id
              $statement->bindValue(':id', $id);
              
-             // now execute the statement
+             // Now execute the statement
              $statement->execute();
              
-             // attach the sql statement to the new work variable so we can access it in the form
+             // Attach the sql statement to the new work variable so we can access it in the form
              $work = $statement->fetch(PDO::FETCH_ASSOC);
              
          } catch(PDOExcpetion $error) {
              echo $sql . "<br>" . $error->getMessage();
          }
      } else {
-         // no id, show error
+         // No id, show an error
          echo "No id - something went wrong";
-         //exit;
+         // Exit;
      };
      
      $options = array(
